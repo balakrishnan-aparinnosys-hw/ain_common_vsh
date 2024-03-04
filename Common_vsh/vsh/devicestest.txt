@@ -1,0 +1,11 @@
+Filesystem     Type      Size  Used Avail Use% Mounted on
+/dev/root      ext4       30G   11G   19G  36% /
+devtmpfs       devtmpfs  776M     0  776M   0% /dev
+tmpfs          tmpfs     937M     0  937M   0% /dev/shm
+tmpfs          tmpfs     937M  504K  936M   1% /run
+tmpfs          tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs          tmpfs     937M     0  937M   0% /sys/fs/cgroup
+/dev/mmcblk0p1 vfat      253M   49M  204M  20% /boot
+/dev/mmcblk0p3 ext4       88G  898M   83G   2% /mnt/Pendrive
+tmpfs          tmpfs     188M     0  188M   0% /run/user/1000
+/dev/sda       ext4      916G  556M  869G   1% /media/pi/HDD

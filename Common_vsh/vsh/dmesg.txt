@@ -1,0 +1,780 @@
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.10.63-v7l+ (dom@buildbot) (arm-linux-gnueabihf-gcc-8 (Ubuntu/Linaro 8.4.0-3ubuntu1) 8.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #1496 SMP Wed Dec 1 15:58:56 GMT 2021
+[    0.000000] CPU: ARMv7 Processor [410fd083] revision 3 (ARMv7), cr=30c5383d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] OF: fdt: Machine model: Raspberry Pi 4 Model B Rev 1.2
+[    0.000000] random: fast init done
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] Reserved memory: created CMA memory pool at 0x000000001ac00000, size 320 MiB
+[    0.000000] OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000000000-0x000000002fffffff]
+[    0.000000]   Normal   empty
+[    0.000000]   HighMem  [mem 0x0000000030000000-0x000000007fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000003b3fffff]
+[    0.000000]   node   0: [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x000000007fffffff]
+[    0.000000] On node 0 totalpages: 504832
+[    0.000000]   DMA zone: 1728 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 196608 pages, LIFO batch:63
+[    0.000000]   HighMem zone: 308224 pages, LIFO batch:63
+[    0.000000] percpu: Embedded 20 pages/cpu s50828 r8192 d22900 u81920
+[    0.000000] pcpu-alloc: s50828 r8192 d22900 u81920 alloc=20*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 503104
+[    0.000000] Kernel command line: coherent_pool=1M 8250.nr_uarts=0 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1  smsc95xx.macaddr=DC:A6:32:7A:69:02 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  console=ttyS0,115200 console=tty1 root=PARTUUID=d058a30f-02 rootfstype=ext4 fsck.repair=yes rootwait
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x0000000015a00000-0x0000000019a00000] (64MB)
+[    0.000000] Memory: 1587372K/2019328K available (10240K kernel code, 1364K rwdata, 3192K rodata, 2048K init, 891K bss, 104276K reserved, 327680K cma-reserved, 1232896K highmem)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] ftrace: allocating 34315 entries in 68 pages
+[    0.000000] ftrace: allocated 68 pages with 2 groups
+[    0.000000] rcu: Hierarchical RCU implementation.
+[    0.000000] 	Rude variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] random: get_random_bytes called from start_kernel+0x3c8/0x59c with crng_init=1
+[    0.000008] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483647500ns
+[    0.000035] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275 ns
+[    0.000098] bcm2835: system timer (irq = 25)
+[    0.000747] arch_timer: cp15 timer(s) running at 54.00MHz (phys).
+[    0.000769] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xc743ce346, max_idle_ns: 440795203123 ns
+[    0.000792] sched_clock: 56 bits at 54MHz, resolution 18ns, wraps every 4398046511102ns
+[    0.000810] Switching to timer-based delay loop, resolution 18ns
+[    0.001067] Console: colour dummy device 80x30
+[    0.001794] printk: console [tty1] enabled
+[    0.001860] Calibrating delay loop (skipped), value calculated using timer frequency.. 108.00 BogoMIPS (lpj=540000)
+[    0.001914] pid_max: default: 32768 minimum: 301
+[    0.002089] LSM: Security Framework initializing
+[    0.002289] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.002334] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+[    0.003813] cgroup: Disabling memory control group subsystem
+[    0.004062] CPU: Testing write buffer coherency: ok
+[    0.004533] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.005757] Setting up static identity map for 0x200000 - 0x20003c
+[    0.005975] rcu: Hierarchical SRCU implementation.
+[    0.006911] smp: Bringing up secondary CPUs ...
+[    0.008127] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.009482] CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+[    0.010787] CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.010944] smp: Brought up 1 node, 4 CPUs
+[    0.010990] SMP: Total of 4 processors activated (432.00 BogoMIPS).
+[    0.011020] CPU: All CPU(s) started in HYP mode.
+[    0.011047] CPU: Virtualization extensions available.
+[    0.011912] devtmpfs: initialized
+[    0.025947] VFP support v0.3: implementor 41 architecture 3 part 40 variant 8 rev 0
+[    0.026209] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.026262] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.034484] pinctrl core: initialized pinctrl subsystem
+[    0.035578] NET: Registered protocol family 16
+[    0.039525] DMA: preallocated 1024 KiB pool for atomic coherent allocations
+[    0.040300] audit: initializing netlink subsys (disabled)
+[    0.040576] audit: type=2000 audit(0.030:1): state=initialized audit_enabled=0 res=1
+[    0.041201] thermal_sys: Registered thermal governor 'step_wise'
+[    0.041866] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.041921] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.042332] Serial: AMBA PL011 UART driver
+[    0.075503] bcm2835-mbox fe00b880.mailbox: mailbox enabled
+[    0.090888] raspberrypi-firmware soc:firmware: Attached to firmware from 2021-12-01T15:01:54, variant start
+[    0.100901] raspberrypi-firmware soc:firmware: Firmware hash is 71bd3109023a0c8575585ba87cbb374d2eeb038f
+[    0.141939] Kprobes globally optimized
+[    0.147057] bcm2835-dma fe007000.dma: DMA legacy API manager, dmachans=0x1
+[    0.151291] vgaarb: loaded
+[    0.151764] SCSI subsystem initialized
+[    0.152007] usbcore: registered new interface driver usbfs
+[    0.152085] usbcore: registered new interface driver hub
+[    0.152183] usbcore: registered new device driver usb
+[    0.152542] usb_phy_generic phy: supply vcc not found, using dummy regulator
+[    0.154437] clocksource: Switched to clocksource arch_sys_counter
+[    1.113136] VFS: Disk quotas dquot_6.6.0
+[    1.113255] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.113434] FS-Cache: Loaded
+[    1.113653] CacheFiles: Loaded
+[    1.124212] NET: Registered protocol family 2
+[    1.124869] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    1.126281] tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 6144 bytes, linear)
+[    1.126441] TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+[    1.126526] TCP bind hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    1.126616] TCP: Hash tables configured (established 8192 bind 8192)
+[    1.126800] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.126856] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    1.127141] NET: Registered protocol family 1
+[    1.127877] RPC: Registered named UNIX socket transport module.
+[    1.127910] RPC: Registered udp transport module.
+[    1.127939] RPC: Registered tcp transport module.
+[    1.127967] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.128005] PCI: CLS 0 bytes, default 64
+[    1.130942] Initialise system trusted keyrings
+[    1.131205] workingset: timestamp_bits=14 max_order=19 bucket_order=5
+[    1.139577] zbud: loaded
+[    1.141785] FS-Cache: Netfs 'nfs' registered for caching
+[    1.142572] NFS: Registering the id_resolver key type
+[    1.142625] Key type id_resolver registered
+[    1.142653] Key type id_legacy registered
+[    1.142818] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    1.142852] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    1.143895] Key type asymmetric registered
+[    1.143927] Asymmetric key parser 'x509' registered
+[    1.144133] bounce: pool size: 64 pages
+[    1.144190] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+[    1.144502] io scheduler mq-deadline registered
+[    1.144533] io scheduler kyber registered
+[    1.148993] brcm-pcie fd500000.pcie: host bridge /scb/pcie@7d500000 ranges:
+[    1.149046] brcm-pcie fd500000.pcie:   No bus range found for /scb/pcie@7d500000, using [bus 00-ff]
+[    1.149147] brcm-pcie fd500000.pcie:      MEM 0x0600000000..0x063fffffff -> 0x00c0000000
+[    1.149256] brcm-pcie fd500000.pcie:   IB MEM 0x0000000000..0x007fffffff -> 0x0400000000
+[    1.206579] brcm-pcie fd500000.pcie: link up, 5.0 GT/s PCIe x1 (SSC)
+[    1.206981] brcm-pcie fd500000.pcie: PCI host bridge to bus 0000:00
+[    1.207019] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    1.207055] pci_bus 0000:00: root bus resource [mem 0x600000000-0x63fffffff] (bus address [0xc0000000-0xffffffff])
+[    1.207168] pci 0000:00:00.0: [14e4:2711] type 01 class 0x060400
+[    1.207426] pci 0000:00:00.0: PME# supported from D0 D3hot
+[    1.210895] PCI: bus0: Fast back to back transfers disabled
+[    1.210936] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+[    1.211330] pci 0000:01:00.0: [1106:3483] type 00 class 0x0c0330
+[    1.211474] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit]
+[    1.211924] pci 0000:01:00.0: PME# supported from D0 D3cold
+[    1.215425] PCI: bus1: Fast back to back transfers disabled
+[    1.215463] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+[    1.215554] pci 0000:00:00.0: BAR 8: assigned [mem 0x600000000-0x6000fffff]
+[    1.215595] pci 0000:01:00.0: BAR 0: assigned [mem 0x600000000-0x600000fff 64bit]
+[    1.215698] pci 0000:00:00.0: PCI bridge to [bus 01]
+[    1.215737] pci 0000:00:00.0:   bridge window [mem 0x600000000-0x6000fffff]
+[    1.216160] pcieport 0000:00:00.0: enabling device (0140 -> 0142)
+[    1.216404] pcieport 0000:00:00.0: PME: Signaling with IRQ 63
+[    1.225172] iproc-rng200 fe104000.rng: hwrng registered
+[    1.225499] vc-mem: phys_addr:0x00000000 mem_base=0x3ec00000 mem_size:0x40000000(1024 MiB)
+[    1.226407] gpiomem-bcm2835 fe200000.gpiomem: Initialised: Registers at 0xfe200000
+[    1.238747] brd: module loaded
+[    1.251091] loop: module loaded
+[    1.252882] Loading iSCSI transport class v2.0-870.
+[    1.256239] libphy: Fixed MDIO Bus: probed
+[    1.257946] bcmgenet fd580000.ethernet: GENET 5.0 EPHY: 0x0000
+[    1.274517] libphy: bcmgenet MII bus: probed
+[    1.354600] unimac-mdio unimac-mdio.-19: Broadcom UniMAC MDIO bus
+[    1.355793] usbcore: registered new interface driver r8152
+[    1.355880] usbcore: registered new interface driver lan78xx
+[    1.355970] usbcore: registered new interface driver smsc95xx
+[    1.357619] xhci_hcd 0000:01:00.0: enabling device (0140 -> 0142)
+[    1.357800] xhci_hcd 0000:01:00.0: xHCI Host Controller
+[    1.357849] xhci_hcd 0000:01:00.0: new USB bus registered, assigned bus number 1
+[    1.361474] xhci_hcd 0000:01:00.0: hcc params 0x002841eb hci version 0x100 quirks 0x0000060000000890
+[    1.362827] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    1.362868] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.362905] usb usb1: Product: xHCI Host Controller
+[    1.362934] usb usb1: Manufacturer: Linux 5.10.63-v7l+ xhci-hcd
+[    1.362965] usb usb1: SerialNumber: 0000:01:00.0
+[    1.363708] hub 1-0:1.0: USB hub found
+[    1.363823] hub 1-0:1.0: 1 port detected
+[    1.364602] xhci_hcd 0000:01:00.0: xHCI Host Controller
+[    1.364647] xhci_hcd 0000:01:00.0: new USB bus registered, assigned bus number 2
+[    1.364692] xhci_hcd 0000:01:00.0: Host supports USB 3.0 SuperSpeed
+[    1.365256] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.10
+[    1.365295] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.365331] usb usb2: Product: xHCI Host Controller
+[    1.365360] usb usb2: Manufacturer: Linux 5.10.63-v7l+ xhci-hcd
+[    1.365391] usb usb2: SerialNumber: 0000:01:00.0
+[    1.366123] hub 2-0:1.0: USB hub found
+[    1.366218] hub 2-0:1.0: 4 ports detected
+[    1.367935] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    1.368260] dwc_otg: FIQ enabled
+[    1.368274] dwc_otg: NAK holdoff enabled
+[    1.368289] dwc_otg: FIQ split-transaction FSM enabled
+[    1.368307] Module dwc_common_port init
+[    1.368769] usbcore: registered new interface driver uas
+[    1.368908] usbcore: registered new interface driver usb-storage
+[    1.369120] mousedev: PS/2 mouse device common for all mice
+[    1.370772] bcm2835-wdt bcm2835-wdt: Broadcom BCM2835 watchdog timer
+[    1.374219] sdhci: Secure Digital Host Controller Interface driver
+[    1.374255] sdhci: Copyright(c) Pierre Ossman
+[    1.374992] mmc-bcm2835 fe300000.mmcnr: could not get clk, deferring probe
+[    1.375594] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.379738] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.380089] hid: raw HID events driver (C) Jiri Kosina
+[    1.380310] usbcore: registered new interface driver usbhid
+[    1.380341] usbhid: USB HID core driver
+[    1.386465] Initializing XFRM netlink socket
+[    1.386528] NET: Registered protocol family 17
+[    1.386661] Key type dns_resolver registered
+[    1.387005] Registering SWP/SWPB emulation handler
+[    1.387188] registered taskstats version 1
+[    1.387228] Loading compiled-in X.509 certificates
+[    1.388107] Key type ._fscrypt registered
+[    1.388138] Key type .fscrypt registered
+[    1.388165] Key type fscrypt-provisioning registered
+[    1.399712] uart-pl011 fe201000.serial: there is not valid maps for state default
+[    1.400040] uart-pl011 fe201000.serial: cts_event_workaround enabled
+[    1.400143] fe201000.serial: ttyAMA0 at MMIO 0xfe201000 (irq = 36, base_baud = 0) is a PL011 rev2
+[    1.407896] bcm2835-power bcm2835-power: Broadcom BCM2835 power domains driver
+[    1.408997] mmc-bcm2835 fe300000.mmcnr: mmc_debug:0 mmc_debug2:0
+[    1.409032] mmc-bcm2835 fe300000.mmcnr: DMA channel allocated
+[    1.439314] of_cfs_init
+[    1.439609] of_cfs_init: OK
+[    1.460028] mmc1: queuing unknown CIS tuple 0x80 (2 bytes)
+[    1.461753] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    1.463646] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    1.466717] mmc1: queuing unknown CIS tuple 0x80 (7 bytes)
+[    1.468439] mmc1: queuing unknown CIS tuple 0x80 (3 bytes)
+[    1.476206] mmc0: SDHCI controller on fe340000.mmc [fe340000.mmc] using ADMA
+[    1.476857] Waiting for root device PARTUUID=d058a30f-02...
+[    1.551779] mmc1: new high speed SDIO card at address 0001
+[    1.584281] mmc0: new ultra high speed DDR50 SDXC card at address aaaa
+[    1.585196] mmcblk0: mmc0:aaaa WX128 119 GiB
+[    1.587146]  mmcblk0: p1 p2 p3
+[    1.601846] EXT4-fs (mmcblk0p2): INFO: recovery required on readonly filesystem
+[    1.601892] EXT4-fs (mmcblk0p2): write access will be enabled during recovery
+[    1.644486] usb 1-1: new high-speed USB device number 2 using xhci_hcd
+[    1.827146] usb 1-1: New USB device found, idVendor=2109, idProduct=3431, bcdDevice= 4.21
+[    1.827197] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    1.827231] usb 1-1: Product: USB2.0 Hub
+[    1.829445] hub 1-1:1.0: USB hub found
+[    1.829750] hub 1-1:1.0: 4 ports detected
+[    1.928857] EXT4-fs (mmcblk0p2): orphan cleanup on readonly fs
+[    1.963942] EXT4-fs (mmcblk0p2): 20 orphan inodes deleted
+[    1.963980] EXT4-fs (mmcblk0p2): recovery complete
+[    1.991135] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    1.991244] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+[    1.996356] devtmpfs: mounted
+[    2.006327] Freeing unused kernel memory: 2048K
+[    2.014814] Run /sbin/init as init process
+[    2.014844]   with arguments:
+[    2.014858]     /sbin/init
+[    2.014873]   with environment:
+[    2.014887]     HOME=/
+[    2.014901]     TERM=linux
+[    2.154496] usb 1-1.1: new full-speed USB device number 3 using xhci_hcd
+[    2.292007] usb 1-1.1: New USB device found, idVendor=10c4, idProduct=ea60, bcdDevice= 1.00
+[    2.292057] usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    2.292094] usb 1-1.1: Product: CP2102 USB to UART Bridge Controller
+[    2.292126] usb 1-1.1: Manufacturer: Silicon Labs
+[    2.292156] usb 1-1.1: SerialNumber: 0001
+[    2.394494] usb 1-1.2: new full-speed USB device number 4 using xhci_hcd
+[    2.409673] systemd[1]: System time before build time, advancing clock.
+[    2.506433] NET: Registered protocol family 10
+[    2.507886] Segment Routing with IPv6
+[    2.543169] usb 1-1.2: New USB device found, idVendor=08bb, idProduct=2902, bcdDevice= 1.00
+[    2.543219] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    2.543255] usb 1-1.2: Product: USB PnP Sound Device
+[    2.543285] usb 1-1.2: Manufacturer: C-Media Electronics Inc.      
+[    2.552583] input: C-Media Electronics Inc.       USB PnP Sound Device as /devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.2/1-1.2:1.3/0003:08BB:2902.0001/input/input0
+[    2.571697] systemd[1]: systemd 241 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+[    2.572814] systemd[1]: Detected architecture arm.
+[    2.614883] hid-generic 0003:08BB:2902.0001: input,hidraw0: USB HID v1.00 Device [C-Media Electronics Inc.       USB PnP Sound Device] on usb-0000:01:00.0-1.2/input3
+[    2.651485] systemd[1]: Set hostname to <NCR-SBI-150153>.
+[    2.724535] usb 1-1.4: new high-speed USB device number 5 using xhci_hcd
+[    2.856083] usb 1-1.4: New USB device found, idVendor=1058, idProduct=2626, bcdDevice=10.34
+[    2.856134] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    2.856172] usb 1-1.4: Product: My Passport 2626
+[    2.856203] usb 1-1.4: Manufacturer: Western Digital
+[    2.856233] usb 1-1.4: SerialNumber: 575832324136315252385952
+[    2.859471] usb-storage 1-1.4:1.0: USB Mass Storage device detected
+[    2.860424] scsi host0: usb-storage 1-1.4:1.0
+[    3.321990] random: systemd: uninitialized urandom read (16 bytes read)
+[    3.332977] random: systemd: uninitialized urandom read (16 bytes read)
+[    3.333602] systemd[1]: Listening on Journal Audit Socket.
+[    3.334274] random: systemd: uninitialized urandom read (16 bytes read)
+[    3.336465] systemd[1]: Created slice User and Session Slice.
+[    3.337604] systemd[1]: Listening on Journal Socket (/dev/log).
+[    3.338057] systemd[1]: Reached target Slices.
+[    3.338779] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    3.339577] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.
+[    3.340547] systemd[1]: Listening on udev Kernel Socket.
+[    3.915327] scsi 0:0:0:0: Direct-Access     WD       My Passport 2626 1034 PQ: 0 ANSI: 6
+[    3.916853] scsi 0:0:0:1: Enclosure         WD       SES Device       1034 PQ: 0 ANSI: 6
+[    3.920524] sd 0:0:0:0: [sda] 1953458176 512-byte logical blocks: (1.00 TB/931 GiB)
+[    3.921273] sd 0:0:0:0: [sda] Write Protect is off
+[    3.921295] sd 0:0:0:0: [sda] Mode Sense: 47 00 10 08
+[    3.922164] sd 0:0:0:0: [sda] No Caching mode page found
+[    3.922185] sd 0:0:0:0: [sda] Assuming drive cache: write through
+[    3.931340] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+[    4.031582] systemd-journald[117]: Received request to flush runtime journal from PID 1
+[    4.054187] systemd-journald[117]: File /var/log/journal/69c451cd245655d37923c60f65291b20/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    4.782422] rpivid-mem feb00000.hevc-decoder: rpivid-hevcmem initialised: Registers at 0xfeb00000 length 0x00010000
+[    4.783030] rpivid-mem feb10000.rpivid-local-intc: rpivid-intcmem initialised: Registers at 0xfeb10000 length 0x00001000
+[    4.783544] rpivid-mem feb20000.h264-decoder: rpivid-h264mem initialised: Registers at 0xfeb20000 length 0x00010000
+[    4.784064] rpivid-mem feb30000.vp9-decoder: rpivid-vp9mem initialised: Registers at 0xfeb30000 length 0x00010000
+[    4.842265] vc_sm_cma: module is from the staging directory, the quality is unknown, you have been warned.
+[    4.842893] snd_bcm2835: module is from the staging directory, the quality is unknown, you have been warned.
+[    4.845764] bcm2835_vc_sm_cma_probe: Videocore shared memory driver
+[    4.845792] [vc_sm_connected_init]: start
+[    4.852657] mc: Linux media interface: v0.10
+[    4.880179] [vc_sm_connected_init]: installed successfully
+[    4.952491] bcm2835_audio bcm2835_audio: card created with 8 channels
+[    4.971585] videodev: Linux video capture interface: v2.00
+[    5.078869] bcm2835_mmal_vchiq: module is from the staging directory, the quality is unknown, you have been warned.
+[    5.087060] bcm2835_mmal_vchiq: module is from the staging directory, the quality is unknown, you have been warned.
+[    5.101773] bcm2835_v4l2: module is from the staging directory, the quality is unknown, you have been warned.
+[    5.114737] bcm2835_isp: module is from the staging directory, the quality is unknown, you have been warned.
+[    5.126978] bcm2835-isp bcm2835-isp: Device node output[0] registered as /dev/video13
+[    5.127528] bcm2835-isp bcm2835-isp: Device node capture[0] registered as /dev/video14
+[    5.127980] bcm2835-isp bcm2835-isp: Device node capture[1] registered as /dev/video15
+[    5.128340] bcm2835-isp bcm2835-isp: Device node stats[2] registered as /dev/video16
+[    5.128377] bcm2835-isp bcm2835-isp: Register output node 0 with media controller
+[    5.128406] bcm2835-isp bcm2835-isp: Register capture node 1 with media controller
+[    5.128443] bcm2835-isp bcm2835-isp: Register capture node 2 with media controller
+[    5.128465] bcm2835-isp bcm2835-isp: Register capture node 3 with media controller
+[    5.128715] bcm2835-isp bcm2835-isp: Loaded V4L2 bcm2835-isp
+[    5.138220] bcm2835_codec: module is from the staging directory, the quality is unknown, you have been warned.
+[    5.152478] bcm2835-codec bcm2835-codec: Device registered as /dev/video10
+[    5.152561] bcm2835-codec bcm2835-codec: Loaded V4L2 decode
+[    5.167601] bcm2835-codec bcm2835-codec: Device registered as /dev/video11
+[    5.167649] bcm2835-codec bcm2835-codec: Loaded V4L2 encode
+[    5.183099] usbcore: registered new interface driver usbserial_generic
+[    5.183215] usbserial: USB Serial support registered for generic
+[    5.184090] bcm2835-codec bcm2835-codec: Device registered as /dev/video12
+[    5.184134] bcm2835-codec bcm2835-codec: Loaded V4L2 isp
+[    5.202238] usbcore: registered new interface driver cp210x
+[    5.202621] usbserial: USB Serial support registered for cp210x
+[    5.203101] cp210x 1-1.1:1.0: cp210x converter detected
+[    5.211655] bcm2835-codec bcm2835-codec: Device registered as /dev/video18
+[    5.211702] bcm2835-codec bcm2835-codec: Loaded V4L2 image_fx
+[    5.220641] usb 1-1.1: cp210x converter now attached to ttyUSB0
+[    5.239130] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    5.239437] [drm] No displays found. Consider forcing hotplug if HDMI is attached
+[    5.239575] vc4-drm gpu: bound fe600000.firmwarekms (ops vc4_fkms_ops [vc4])
+[    5.256700] [drm] Initialized vc4 0.0.0 20140616 for gpu on minor 0
+[    5.371415] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    5.403168] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    5.403724] scsi 0:0:0:1: Attached scsi generic sg1 type 13
+[    5.435594] usbcore: registered new interface driver snd-usb-audio
+[    5.442116] brcmfmac: F1 signature read @0x18000000=0x15264345
+[    5.461437] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+[    5.463373] usbcore: registered new interface driver brcmfmac
+[    5.470553] [drm] Initialized v3d 1.0.0 20180419 for fec00000.v3d on minor 1
+[    5.730612] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+[    5.730727] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+[    5.741251] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Jan  4 2021 19:56:29 version 7.45.229 (617f1f5 CY) FWID 01-2dbd9d2e
+[    6.211954] rtc-ds1307: probe of 1-0068 failed with error -121
+[    7.235311] sd 0:0:0:0: [sda] Attached SCSI disk
+[    7.536359] EXT4-fs (mmcblk0p3): recovery complete
+[    7.537578] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+[    8.546430] random: crng init done
+[    8.546451] random: 7 urandom warning(s) missed due to ratelimiting
+[    8.701787] uart-pl011 fe201000.serial: no DMA platform data
+[    8.705340] 8021q: 802.1Q VLAN Support v1.8
+[    8.924585] Adding 102396k swap on /var/swap.  Priority:-2 extents:1 across:102396k SSFS
+[    9.351487] bcmgenet fd580000.ethernet: configuring instance for external RGMII (RX delay)
+[    9.351925] bcmgenet fd580000.ethernet eth0: Link is Down
+[   12.350898] EXT4-fs (sda): warning: mounting unchecked fs, running e2fsck is recommended
+[   12.387737] EXT4-fs (sda): recovery complete
+[   12.388186] EXT4-fs (sda): mounted filesystem with ordered data mode. Opts: (null)
+[   12.474679] bcmgenet fd580000.ethernet eth0: Link is Up - 100Mbps/Full - flow control rx/tx
+[   12.474720] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   15.520740] Bluetooth: Core ver 2.22
+[   15.520854] NET: Registered protocol family 31
+[   15.520871] Bluetooth: HCI device and connection manager initialized
+[   15.520900] Bluetooth: HCI socket layer initialized
+[   15.520924] Bluetooth: L2CAP socket layer initialized
+[   15.520959] Bluetooth: SCO socket layer initialized
+[   15.530336] Bluetooth: HCI UART driver ver 2.3
+[   15.530359] Bluetooth: HCI UART protocol H4 registered
+[   15.530466] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[   15.530813] Bluetooth: HCI UART protocol Broadcom registered
+[   15.716006] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[   15.716015] Bluetooth: BNEP filters: protocol multicast
+[   15.716029] Bluetooth: BNEP socket layer initialized
+[  133.403543] EXT4-fs error (device sda): ext4_validate_block_bitmap:390: comm kworker/u8:0: bg 30: bad block bitmap checksum
+[  315.347410] EXT4-fs (sda): error count since last fsck: 211251
+[  315.347445] EXT4-fs (sda): initial error at time 1697704210: ext4_validate_inode_bitmap:106
+[  315.347467] EXT4-fs (sda): last error at time 1708975331: ext4_validate_block_bitmap:390
+[ 5795.710448] EXT4-fs error (device sda): ext4_validate_block_bitmap:390: comm kworker/u8:3: bg 63: bad block bitmap checksum
+[ 5805.901336] EXT4-fs error (device sda): ext4_validate_block_bitmap:390: comm kworker/u8:3: bg 79: bad block bitmap checksum
+[ 5871.571936] EXT4-fs error (device sda): ext4_validate_block_bitmap:390: comm kworker/u8:3: bg 95: bad block bitmap checksum
+[11075.548736] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 1, inode_bitmap = 1159
+[11075.651427] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 2, inode_bitmap = 1160
+[11075.652127] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3, inode_bitmap = 1161
+[11075.652726] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 4, inode_bitmap = 1162
+[11075.653336] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5, inode_bitmap = 1163
+[11075.653938] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 6, inode_bitmap = 1164
+[11075.654537] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 7, inode_bitmap = 1165
+[11075.655137] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 8, inode_bitmap = 1166
+[11075.655725] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 9, inode_bitmap = 1167
+[11075.656391] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 10, inode_bitmap = 1168
+[11080.558549] EXT4-fs error: 3220 callbacks suppressed
+[11080.558556] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3231, inode_bitmap = 105381919
+[11080.584434] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3232, inode_bitmap = 105906192
+[11080.585657] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3233, inode_bitmap = 105906193
+[11080.586298] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3234, inode_bitmap = 105906194
+[11080.586902] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3235, inode_bitmap = 105906195
+[11080.587511] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3236, inode_bitmap = 105906196
+[11080.588129] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3237, inode_bitmap = 105906197
+[11080.588739] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3238, inode_bitmap = 105906198
+[11080.589360] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3239, inode_bitmap = 105906199
+[11080.589979] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3240, inode_bitmap = 105906200
+[11085.566272] EXT4-fs error: 2441 callbacks suppressed
+[11085.566283] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5682, inode_bitmap = 186122258
+[11085.567095] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5683, inode_bitmap = 186122259
+[11085.567923] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5684, inode_bitmap = 186122260
+[11085.568744] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5685, inode_bitmap = 186122261
+[11085.569546] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5686, inode_bitmap = 186122262
+[11085.570344] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5687, inode_bitmap = 186122263
+[11085.571172] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5688, inode_bitmap = 186122264
+[11085.571968] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5689, inode_bitmap = 186122265
+[11085.572779] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5690, inode_bitmap = 186122266
+[11085.573553] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5691, inode_bitmap = 186122267
+[15753.641066] usb 1-1.4: USB disconnect, device number 5
+[15753.846575] Buffer I/O error on dev sda, logical block 121667584, lost sync page write
+[15753.846587] JBD2: Error -5 detected when updating journal superblock for sda-8.
+[15753.846594] Aborting journal on device sda-8.
+[15753.846607] Buffer I/O error on dev sda, logical block 121667584, lost sync page write
+[15753.846616] JBD2: Error -5 detected when updating journal superblock for sda-8.
+[15755.050058] usb 1-1-port4: Cannot enable. Maybe the USB cable is bad?
+[15755.959805] usb 1-1-port4: Cannot enable. Maybe the USB cable is bad?
+[15755.960057] usb 1-1-port4: attempt power cycle
+[15757.209764] usb 1-1-port4: Cannot enable. Maybe the USB cable is bad?
+[15758.119734] usb 1-1-port4: Cannot enable. Maybe the USB cable is bad?
+[15758.119980] usb 1-1-port4: unable to enumerate USB device
+[69514.350830] python invoked oom-killer: gfp_mask=0x400dc2(GFP_KERNEL_ACCOUNT|__GFP_HIGHMEM|__GFP_ZERO), order=0, oom_score_adj=0
+[69514.350843] CPU: 3 PID: 30034 Comm: python Tainted: G         C        5.10.63-v7l+ #1496
+[69514.350847] Hardware name: BCM2711
+[69514.350852] Backtrace: 
+[69514.350871] [<c0b83534>] (dump_backtrace) from [<c0b838c8>] (show_stack+0x20/0x24)
+[69514.350878]  r7:ffffffff r6:00000000 r5:68000113 r4:c12e6b3c
+[69514.350886] [<c0b838a8>] (show_stack) from [<c0b87cb4>] (dump_stack+0xcc/0xf8)
+[69514.350894] [<c0b87be8>] (dump_stack) from [<c0b85f44>] (dump_header+0x64/0x208)
+[69514.350900]  r10:c12051cc r9:00400dc2 r8:00000000 r7:c0e3bb60 r6:c4395e00 r5:c7300000
+[69514.350905]  r4:c71e1de8 r3:ae081843
+[69514.350915] [<c0b85ee0>] (dump_header) from [<c03b9070>] (oom_kill_process+0x1b4/0x1c0)
+[69514.350920]  r7:c0e3bb60 r6:c71e1de8 r5:c7300580 r4:c7300000
+[69514.350927] [<c03b8ebc>] (oom_kill_process) from [<c03b9be8>] (out_of_memory+0x2b8/0x390)
+[69514.350932]  r7:c12085c0 r6:c1205048 r5:c7300000 r4:c71e1de8
+[69514.350941] [<c03b9930>] (out_of_memory) from [<c040d260>] (__alloc_pages_nodemask+0x7ec/0x1184)
+[69514.350946]  r7:c1337e90 r6:00001000 r5:00001cda r4:00000000
+[69514.350954] [<c040ca74>] (__alloc_pages_nodemask) from [<c03eec4c>] (__pte_alloc+0x34/0x168)
+[69514.350960]  r10:c1205048 r9:00000040 r8:00000255 r7:00000000 r6:c428fee0 r5:c6bda600
+[69514.350964]  r4:3b908000
+[69514.350970] [<c03eec18>] (__pte_alloc) from [<c03f2494>] (handle_mm_fault+0x100c/0x1124)
+[69514.350975]  r7:00000000 r6:0428f003 r5:00000000 r4:3b908000
+[69514.350983] [<c03f1488>] (handle_mm_fault) from [<c0b93f5c>] (do_page_fault+0x144/0x314)
+[69514.350988]  r10:00000255 r9:00000800 r8:c6bda644 r7:c6bda600 r6:00000a06 r5:3b908000
+[69514.350992]  r4:c71e1fb0
+[69514.350999] [<c0b93e18>] (do_page_fault) from [<c0b9420c>] (do_translation_fault+0xe0/0x10c)
+[69514.351005]  r10:00000000 r9:b6d3c258 r8:00000a06 r7:3b908000 r6:c0b9412c r5:00000a06
+[69514.351009]  r4:c120af38
+[69514.351016] [<c0b9412c>] (do_translation_fault) from [<c0214ca4>] (do_DataAbort+0x40/0xc0)
+[69514.351022]  r9:b6d3c258 r8:c71e1fb0 r7:3b908000 r6:c0b9412c r5:00000a06 r4:c120af38
+[69514.351028] [<c0214c64>] (do_DataAbort) from [<c0200da4>] (__dabt_usr+0x44/0x60)
+[69514.351033] Exception stack(0xc71e1fb0 to 0xc71e1ff8)
+[69514.351038] 1fa0:                                     3b908000 0011c002 00000000 3b908008
+[69514.351044] 1fc0: a7400010 0011c000 00023601 0011b018 b6d3c000 b6d3c258 00000000 fffff000
+[69514.351049] 1fe0: b6d3c26c 4122c6f8 b6d3c258 b6c628c8 48000010 ffffffff
+[69514.351055]  r8:30c5387d r7:30c5383d r6:ffffffff r5:48000010 r4:b6c628c8
+[69514.351059] Mem-Info:
+[69514.351071] active_anon:88359 inactive_anon:368853 isolated_anon:0
+                active_file:358 inactive_file:417 isolated_file:32
+                unevictable:8 dirty:0 writeback:0
+                slab_reclaimable:3180 slab_unreclaimable:4341
+                mapped:679 shmem:61 pagetables:1603 bounce:0
+                free:7449 free_pcp:7 free_cma:2190
+[69514.351082] Node 0 active_anon:353436kB inactive_anon:1475412kB active_file:1432kB inactive_file:1668kB unevictable:32kB isolated(anon):0kB isolated(file):128kB mapped:2716kB dirty:0kB writeback:0kB shmem:244kB writeback_tmp:0kB kernel_stack:1560kB all_unreclaimable? no
+[69514.351093] DMA free:26652kB min:16384kB low:20480kB high:24576kB reserved_highatomic:0KB active_anon:760kB inactive_anon:609692kB active_file:1232kB inactive_file:1720kB unevictable:0kB writepending:0kB present:786432kB managed:684204kB mlocked:0kB pagetables:1828kB bounce:0kB free_pcp:28kB local_pcp:0kB free_cma:8504kB
+[69514.351099] lowmem_reserve[]: 0 0 1204 1204
+[69514.351135] HighMem free:2860kB min:4608kB low:11988kB high:19368kB reserved_highatomic:0KB active_anon:352676kB inactive_anon:865496kB active_file:60kB inactive_file:664kB unevictable:32kB writepending:0kB present:1232896kB managed:1232896kB mlocked:32kB pagetables:4584kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[69514.351141] lowmem_reserve[]: 0 0 0 0
+[69514.351173] DMA: 422*4kB (UEC) 541*8kB (UEC) 516*16kB (UEC) 132*32kB (UEC) 39*64kB (UEC) 14*128kB (UEC) 7*256kB (UC) 3*512kB (UC) 1*1024kB (C) 0*2048kB 0*4096kB = 27136kB
+[69514.351293] HighMem: 97*4kB (UM) 140*8kB (UM) 44*16kB (M) 22*32kB (UM) 3*64kB (M) 1*128kB (M) 1*256kB (M) 0*512kB 0*1024kB 0*2048kB 0*4096kB = 3492kB
+[69514.351417] 1110 total pagecache pages
+[69514.351424] 191 pages in swap cache
+[69514.351431] Swap cache stats: add 48689, delete 48498, find 18965/19558
+[69514.351437] Free swap  = 0kB
+[69514.351443] Total swap = 102396kB
+[69514.351449] 504832 pages RAM
+[69514.351455] 308224 pages HighMem/MovableOnly
+[69514.351461] 25557 pages reserved
+[69514.351467] 81920 pages cma reserved
+[69514.351473] Tasks state (memory values in pages):
+[69514.351479] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[69514.351491] [    117]     0   117    22770      116   249856      140             0 systemd-journal
+[69514.351499] [    152]     0   152     4520       11    49152      208         -1000 systemd-udevd
+[69514.351508] [    323]   100   323     5595       17    61440      146             0 systemd-timesyn
+[69514.351516] [    353]     0   353     6368      216    61440      117             0 rsyslogd
+[69514.351524] [    355]     0   355      923       10    32768       41             0 alsactl
+[69514.351532] [    359] 65534   359     1089        6    36864       40             0 thd
+[69514.351540] [    381]     0   381     1987       16    40960       30             0 cron
+[69514.351548] [    383]     0   383   169451     1517    61440     2095             0 remoteit
+[69514.351555] [    385]     0   385     3269       70    45056      103             0 systemd-logind
+[69514.351563] [    386]   108   386     1464       46    36864       34             0 avahi-daemon
+[69514.351571] [    387]   104   387     1647       80    36864       52          -900 dbus-daemon
+[69514.351579] [    388]     0   388     2667       13    45056       88             0 wpa_supplicant
+[69514.351586] [    397]     0   397     6914       25    40960       10             0 rngd
+[69514.351594] [    419]   108   419     1432        3    32768       60             0 avahi-daemon
+[69514.351602] [    487]     0   487     2732       19    45056      118             0 wpa_supplicant
+[69514.351609] [    519]     0   519      535        0    24576       32             0 hciattach
+[69514.351617] [    526]     0   526     2384        0    45056       91             0 bluetoothd
+[69514.351625] [    574]     0   574      742       10    28672       90             0 dhcpcd
+[69514.351632] [    578]   109   578      610       18    32768        7             0 vnstatd
+[69514.351639] [    583]     0   583     1077        0    32768       26             0 agetty
+[69514.351647] [    603]     0   603     2663       17    45056      129         -1000 sshd
+[69514.351655] [    830]   110   830     3591       11    49152      140             0 exim4
+[69514.351662] [    889]     0   889      629       87    28672       35             0 connectd
+[69514.351670] [    894]     0   894      629       19    32768       35             0 connectd
+[69514.351677] [    895]     0   895      485        6    28672       29             0 demuxer
+[69514.351685] [  16090]     0 16090     1952        0    36864       38             0 bash
+[69514.351693] [  16092]     0 16092     2570        0    49152       93             0 sudo
+[69514.351701] [  16095]     0 16095    49105    16990   716800     2690             0 edge-controller
+[69514.351708] [  16178]     0 16178   597372   434725  4329472    18723             0 python
+[69514.351716] [  10675]     0 10675      680      160    36864        0             0 aivoip
+[69514.351724] [  10676]     0 10676    14575     1529    90112        0             0 aivoip
+[69514.351733] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=python,pid=16178,uid=0
+[69514.351841] Out of memory: Killed process 16178 (python) total-vm:2389488kB, anon-rss:1738900kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:4228kB oom_score_adj:0
+[69514.610575] oom_reaper: reaped process 16178 (python), now anon-rss:16kB, file-rss:0kB, shmem-rss:0kB
+[97700.696902] python invoked oom-killer: gfp_mask=0x400dc2(GFP_KERNEL_ACCOUNT|__GFP_HIGHMEM|__GFP_ZERO), order=0, oom_score_adj=0
+[97700.696915] CPU: 0 PID: 10094 Comm: python Tainted: G         C        5.10.63-v7l+ #1496
+[97700.696920] Hardware name: BCM2711
+[97700.696924] Backtrace: 
+[97700.696942] [<c0b83534>] (dump_backtrace) from [<c0b838c8>] (show_stack+0x20/0x24)
+[97700.696948]  r7:ffffffff r6:00000000 r5:60000013 r4:c12e6b3c
+[97700.696956] [<c0b838a8>] (show_stack) from [<c0b87cb4>] (dump_stack+0xcc/0xf8)
+[97700.696963] [<c0b87be8>] (dump_stack) from [<c0b85f44>] (dump_header+0x64/0x208)
+[97700.696969]  r10:c12051cc r9:00400dc2 r8:00000000 r7:c0e3bb60 r6:c6a9d200 r5:c411dd00
+[97700.696973]  r4:c3017de8 r3:ae081843
+[97700.696983] [<c0b85ee0>] (dump_header) from [<c03b9070>] (oom_kill_process+0x1b4/0x1c0)
+[97700.696988]  r7:c0e3bb60 r6:c3017de8 r5:c411e280 r4:c411dd00
+[97700.696995] [<c03b8ebc>] (oom_kill_process) from [<c03b9be8>] (out_of_memory+0x2b8/0x390)
+[97700.697000]  r7:c12085c0 r6:c1205048 r5:c411dd00 r4:c3017de8
+[97700.697009] [<c03b9930>] (out_of_memory) from [<c040d260>] (__alloc_pages_nodemask+0x7ec/0x1184)
+[97700.697014]  r7:c1337e90 r6:00001000 r5:00001f06 r4:00000000
+[97700.697022] [<c040ca74>] (__alloc_pages_nodemask) from [<c03eec4c>] (__pte_alloc+0x34/0x168)
+[97700.697028]  r10:c1205048 r9:00000040 r8:00000255 r7:00000000 r6:c2e1c388 r5:c2963400
+[97700.697032]  r4:4e30d000
+[97700.697039] [<c03eec18>] (__pte_alloc) from [<c03f2494>] (handle_mm_fault+0x100c/0x1124)
+[97700.697044]  r7:00000000 r6:02e1c003 r5:00000000 r4:4e30d000
+[97700.697051] [<c03f1488>] (handle_mm_fault) from [<c0b93f5c>] (do_page_fault+0x144/0x314)
+[97700.697057]  r10:00000255 r9:00000800 r8:c2963444 r7:c2963400 r6:00000a06 r5:4e30d000
+[97700.697061]  r4:c3017fb0
+[97700.697068] [<c0b93e18>] (do_page_fault) from [<c0b9420c>] (do_translation_fault+0xe0/0x10c)
+[97700.697073]  r10:00000000 r9:b6d74258 r8:00000a06 r7:4e30d000 r6:c0b9412c r5:00000a06
+[97700.697077]  r4:c120af38
+[97700.697085] [<c0b9412c>] (do_translation_fault) from [<c0214ca4>] (do_DataAbort+0x40/0xc0)
+[97700.697090]  r9:b6d74258 r8:c3017fb0 r7:4e30d000 r6:c0b9412c r5:00000a06 r4:c120af38
+[97700.697097] [<c0214c64>] (do_DataAbort) from [<c0200da4>] (__dabt_usr+0x44/0x60)
+[97700.697102] Exception stack(0xc3017fb0 to 0xc3017ff8)
+[97700.697107] 7fa0:                                     4e30d000 0011c002 00000000 4e30d008
+[97700.697113] 7fc0: a7700010 0011c000 00023601 0011b018 b6d74000 b6d74258 00000000 fffff000
+[97700.697118] 7fe0: b6d7426c 392086f8 b6d74258 b6c9a8c8 48000010 ffffffff
+[97700.697123]  r8:30c5387d r7:30c5383d r6:ffffffff r5:48000010 r4:b6c9a8c8
+[97700.697128] Mem-Info:
+[97700.697139] active_anon:161188 inactive_anon:295291 isolated_anon:0
+                active_file:324 inactive_file:381 isolated_file:31
+                unevictable:8 dirty:0 writeback:0
+                slab_reclaimable:3264 slab_unreclaimable:4440
+                mapped:721 shmem:62 pagetables:1591 bounce:0
+                free:8078 free_pcp:0 free_cma:2669
+[97700.697150] Node 0 active_anon:644752kB inactive_anon:1181164kB active_file:1296kB inactive_file:1524kB unevictable:32kB isolated(anon):0kB isolated(file):124kB mapped:2884kB dirty:0kB writeback:0kB shmem:248kB writeback_tmp:0kB kernel_stack:1568kB all_unreclaimable? no
+[97700.697161] DMA free:28300kB min:16384kB low:20480kB high:24576kB reserved_highatomic:0KB active_anon:201208kB inactive_anon:406268kB active_file:1424kB inactive_file:1728kB unevictable:0kB writepending:0kB present:786432kB managed:684204kB mlocked:0kB pagetables:1848kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:10676kB
+[97700.697167] lowmem_reserve[]: 0 0 1204 1204
+[97700.697204] HighMem free:4012kB min:512kB low:7892kB high:15272kB reserved_highatomic:0KB active_anon:443544kB inactive_anon:774816kB active_file:0kB inactive_file:0kB unevictable:32kB writepending:0kB present:1232896kB managed:1232896kB mlocked:32kB pagetables:4516kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[97700.697209] lowmem_reserve[]: 0 0 0 0
+[97700.697241] DMA: 620*4kB (UMEC) 513*8kB (UMEC) 451*16kB (UMEC) 129*32kB (UMEC) 65*64kB (UEC) 26*128kB (UEC) 1*256kB (C) 0*512kB 1*1024kB (C) 1*2048kB (C) 0*4096kB = 28744kB
+[97700.697360] HighMem: 235*4kB (UM) 94*8kB (UM) 62*16kB (UM) 27*32kB (UM) 7*64kB (UM) 1*128kB (U) 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 4124kB
+[97700.697469] 861 total pagecache pages
+[97700.697477] 11 pages in swap cache
+[97700.697485] Swap cache stats: add 74245, delete 74234, find 22508/23942
+[97700.697492] Free swap  = 0kB
+[97700.697499] Total swap = 102396kB
+[97700.697506] 504832 pages RAM
+[97700.697513] 308224 pages HighMem/MovableOnly
+[97700.697520] 25557 pages reserved
+[97700.697527] 81920 pages cma reserved
+[97700.697534] Tasks state (memory values in pages):
+[97700.697540] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[97700.697553] [    117]     0   117    13535      121   176128      136             0 systemd-journal
+[97700.697561] [    152]     0   152     4520       11    49152      208         -1000 systemd-udevd
+[97700.697571] [    323]   100   323     5595       17    61440      146             0 systemd-timesyn
+[97700.697579] [    353]     0   353     6368      226    61440      108             0 rsyslogd
+[97700.697586] [    355]     0   355      923       10    32768       41             0 alsactl
+[97700.697594] [    359] 65534   359     1089        6    36864       40             0 thd
+[97700.697602] [    381]     0   381     1987       16    40960       30             0 cron
+[97700.697610] [    383]     0   383   169451     1602    61440     2114             0 remoteit
+[97700.697618] [    385]     0   385     3269       30    45056      143             0 systemd-logind
+[97700.697625] [    386]   108   386     1464       13    36864       67             0 avahi-daemon
+[97700.697633] [    387]   104   387     1647       78    36864       54          -900 dbus-daemon
+[97700.697641] [    388]     0   388     2667       13    45056       88             0 wpa_supplicant
+[97700.697649] [    397]     0   397     6914       25    40960       10             0 rngd
+[97700.697657] [    419]   108   419     1432        0    32768       63             0 avahi-daemon
+[97700.697664] [    487]     0   487     2732       19    45056      118             0 wpa_supplicant
+[97700.697672] [    519]     0   519      535        0    24576       32             0 hciattach
+[97700.697680] [    526]     0   526     2384        0    45056       91             0 bluetoothd
+[97700.697688] [    574]     0   574      742        6    28672       94             0 dhcpcd
+[97700.697696] [    578]   109   578      610       18    32768        7             0 vnstatd
+[97700.697704] [    583]     0   583     1077        0    32768       26             0 agetty
+[97700.697712] [    603]     0   603     2663        1    45056      145         -1000 sshd
+[97700.697719] [    830]   110   830     3591       11    49152      140             0 exim4
+[97700.697727] [    889]     0   889      629       27    28672       35             0 connectd
+[97700.697735] [    894]     0   894      629      156    32768       35             0 connectd
+[97700.697743] [    895]     0   895      485        6    28672       29             0 demuxer
+[97700.697750] [  16090]     0 16090     1952        0    36864       38             0 bash
+[97700.697758] [  16092]     0 16092     2570        0    49152       93             0 sudo
+[97700.697766] [  16095]     0 16095    49878    18036   712704     2856             0 edge-controller
+[97700.697774] [  30083]     0 30083   595610   433109  4358144    18471             0 python
+[97700.697782] [   2237]     0  2237      680      160    32768        0             0 aivoip
+[97700.697790] [   2239]     0  2239    14575     1528    90112        1             0 aivoip
+[97700.697800] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=python,pid=30083,uid=0
+[97700.697902] Out of memory: Killed process 30083 (python) total-vm:2382440kB, anon-rss:1732236kB, file-rss:188kB, shmem-rss:0kB, UID:0 pgtables:4256kB oom_score_adj:0
+[97700.975882] oom_reaper: reaped process 30083 (python), now anon-rss:16kB, file-rss:0kB, shmem-rss:0kB
+[136227.475069] systemd-journal invoked oom-killer: gfp_mask=0x400dc2(GFP_KERNEL_ACCOUNT|__GFP_HIGHMEM|__GFP_ZERO), order=0, oom_score_adj=0
+[136227.475081] CPU: 0 PID: 117 Comm: systemd-journal Tainted: G         C        5.10.63-v7l+ #1496
+[136227.475085] Hardware name: BCM2711
+[136227.475090] Backtrace: 
+[136227.475108] [<c0b83534>] (dump_backtrace) from [<c0b838c8>] (show_stack+0x20/0x24)
+[136227.475114]  r7:ffffffff r6:00000000 r5:60000113 r4:c12e6b3c
+[136227.475122] [<c0b838a8>] (show_stack) from [<c0b87cb4>] (dump_stack+0xcc/0xf8)
+[136227.475129] [<c0b87be8>] (dump_stack) from [<c0b85f44>] (dump_header+0x64/0x208)
+[136227.475136]  r10:c12051cc r9:00400dc2 r8:00000000 r7:c0e3bb60 r6:c2d01e00 r5:c3c93e00
+[136227.475140]  r4:c30adde8 r3:ae081843
+[136227.475150] [<c0b85ee0>] (dump_header) from [<c03b9070>] (oom_kill_process+0x1b4/0x1c0)
+[136227.475155]  r7:c0e3bb60 r6:c30adde8 r5:c3c94380 r4:c3c93e00
+[136227.475163] [<c03b8ebc>] (oom_kill_process) from [<c03b9be8>] (out_of_memory+0x2b8/0x390)
+[136227.475168]  r7:c12085c0 r6:c1205048 r5:c3c93e00 r4:c30adde8
+[136227.475176] [<c03b9930>] (out_of_memory) from [<c040d260>] (__alloc_pages_nodemask+0x7ec/0x1184)
+[136227.475181]  r7:c1337e90 r6:00001000 r5:00001c32 r4:00000000
+[136227.475189] [<c040ca74>] (__alloc_pages_nodemask) from [<c03eec4c>] (__pte_alloc+0x34/0x168)
+[136227.475195]  r10:c1205048 r9:00000040 r8:00000255 r7:00000000 r6:c30d1d48 r5:c2d26400
+[136227.475199]  r4:b530d000
+[136227.475206] [<c03eec18>] (__pte_alloc) from [<c03f2494>] (handle_mm_fault+0x100c/0x1124)
+[136227.475211]  r7:00000000 r6:030d1003 r5:00000000 r4:b530d000
+[136227.475218] [<c03f1488>] (handle_mm_fault) from [<c0b93f5c>] (do_page_fault+0x144/0x314)
+[136227.475224]  r10:00000255 r9:00000800 r8:c2d26444 r7:c2d26400 r6:00000a06 r5:b530d000
+[136227.475228]  r4:c30adfb0
+[136227.475235] [<c0b93e18>] (do_page_fault) from [<c0b9420c>] (do_translation_fault+0xe0/0x10c)
+[136227.475241]  r10:00000000 r9:b6edf258 r8:00000a06 r7:b530d000 r6:c0b9412c r5:00000a06
+[136227.475245]  r4:c120af38
+[136227.475252] [<c0b9412c>] (do_translation_fault) from [<c0214ca4>] (do_DataAbort+0x40/0xc0)
+[136227.475258]  r9:b6edf258 r8:c30adfb0 r7:b530d000 r6:c0b9412c r5:00000a06 r4:c120af38
+[136227.475264] [<c0214c64>] (do_DataAbort) from [<c0200da4>] (__dabt_usr+0x44/0x60)
+[136227.475269] Exception stack(0xc30adfb0 to 0xc30adff8)
+[136227.475274] dfa0:                                     b530d000 00201002 00000000 b530d008
+[136227.475280] dfc0: b6edf7d4 00201000 0003ffff 00200008 b6edf000 b6edf258 00000000 fffff000
+[136227.475285] dfe0: b6edf26c bed5e468 b6edf258 b6e058c8 40000010 ffffffff
+[136227.475290]  r8:30c5387d r7:30c5383d r6:ffffffff r5:40000010 r4:b6e058c8
+[136227.475309] Mem-Info:
+[136227.475321] active_anon:66506 inactive_anon:389677 isolated_anon:0
+                 active_file:173 inactive_file:1615 isolated_file:0
+                 unevictable:8 dirty:0 writeback:0
+                 slab_reclaimable:3282 slab_unreclaimable:4515
+                 mapped:1153 shmem:67 pagetables:1676 bounce:0
+                 free:7371 free_pcp:0 free_cma:1922
+[136227.475332] Node 0 active_anon:266024kB inactive_anon:1558708kB active_file:692kB inactive_file:6460kB unevictable:32kB isolated(anon):0kB isolated(file):0kB mapped:4612kB dirty:0kB writeback:0kB shmem:268kB writeback_tmp:0kB kernel_stack:1608kB all_unreclaimable? no
+[136227.475346] DMA free:25716kB min:16384kB low:20480kB high:24576kB reserved_highatomic:0KB active_anon:136760kB inactive_anon:473684kB active_file:648kB inactive_file:2500kB unevictable:0kB writepending:0kB present:786432kB managed:684204kB mlocked:0kB pagetables:1976kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:7688kB
+[136227.475352] lowmem_reserve[]: 0 0 1204 1204
+[136227.475389] HighMem free:3768kB min:23420kB low:30800kB high:38180kB reserved_highatomic:0KB active_anon:129264kB inactive_anon:1085024kB active_file:120kB inactive_file:3992kB unevictable:32kB writepending:0kB present:1232896kB managed:1232896kB mlocked:32kB pagetables:4728kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+[136227.475394] lowmem_reserve[]: 0 0 0 0
+[136227.475426] DMA: 613*4kB (UMEC) 460*8kB (UMEC) 440*16kB (UMEC) 195*32kB (UEC) 35*64kB (UEC) 4*128kB (UEC) 2*256kB (C) 0*512kB 1*1024kB (C) 1*2048kB (C) 0*4096kB = 25748kB
+[136227.475555] HighMem: 253*4kB (UM) 107*8kB (UM) 42*16kB (UM) 27*32kB (UM) 6*64kB (UM) 0*128kB 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 3788kB
+[136227.475653] 2111 total pagecache pages
+[136227.475660] 173 pages in swap cache
+[136227.475667] Swap cache stats: add 106987, delete 106814, find 52042/53872
+[136227.475673] Free swap  = 0kB
+[136227.475679] Total swap = 102396kB
+[136227.475685] 504832 pages RAM
+[136227.475691] 308224 pages HighMem/MovableOnly
+[136227.475697] 25557 pages reserved
+[136227.475703] 81920 pages cma reserved
+[136227.475709] Tasks state (memory values in pages):
+[136227.475715] [  pid  ]   uid  tgid total_vm      rss pgtables_bytes swapents oom_score_adj name
+[136227.475728] [    117]     0   117    25314      174   290816      138             0 systemd-journal
+[136227.475736] [    152]     0   152     4520       11    49152      208         -1000 systemd-udevd
+[136227.475745] [    323]   100   323     5595       17    61440      146             0 systemd-timesyn
+[136227.475753] [    353]     0   353     6368      237    61440       99             0 rsyslogd
+[136227.475762] [    355]     0   355      923       10    32768       41             0 alsactl
+[136227.475770] [    359] 65534   359     1089        6    36864       40             0 thd
+[136227.475777] [    381]     0   381     1987       16    40960       30             0 cron
+[136227.475785] [    383]     0   383   169451     1565    61440     2086             0 remoteit
+[136227.475793] [    385]     0   385     3269       49    45056      128             0 systemd-logind
+[136227.475801] [    386]   108   386     1464       37    36864       42             0 avahi-daemon
+[136227.475809] [    387]   104   387     1647       83    36864       49          -900 dbus-daemon
+[136227.475817] [    388]     0   388     2667       13    45056       88             0 wpa_supplicant
+[136227.475824] [    397]     0   397     6914       25    40960       10             0 rngd
+[136227.475832] [    419]   108   419     1432        0    32768       63             0 avahi-daemon
+[136227.475840] [    487]     0   487     2732       19    45056      118             0 wpa_supplicant
+[136227.475848] [    519]     0   519      535        0    24576       32             0 hciattach
+[136227.475856] [    526]     0   526     2384        0    45056       91             0 bluetoothd
+[136227.475863] [    574]     0   574      742        6    28672       94             0 dhcpcd
+[136227.475871] [    578]   109   578      610       18    32768        7             0 vnstatd
+[136227.475879] [    583]     0   583     1077        0    32768       26             0 agetty
+[136227.475887] [    603]     0   603     2663       30    45056      115         -1000 sshd
+[136227.475895] [    830]   110   830     3591       11    49152      140             0 exim4
+[136227.475903] [    889]     0   889      629      157    28672       35             0 connectd
+[136227.475911] [    894]     0   894      629      115    32768       35             0 connectd
+[136227.475918] [    895]     0   895      485        6    28672       29             0 demuxer
+[136227.475926] [   7261]     0  7261     1952        0    36864       38             0 bash
+[136227.475934] [   7264]     0  7264     2570        0    45056       93             0 sudo
+[136227.475942] [   7266]     0  7266    50460    18439   749568     2648             0 edge-controller
+[136227.475950] [   7387]     0  7387   593771   431164  4296704    18803             0 python
+[136227.475958] [   4166]     0  4166      680      160    36864        0             0 aivoip
+[136227.475966] [   4173]     0  4173    14575     1529    98304        0             0 aivoip
+[136227.475974] [  13284]     0 13284     3041      198    45056        0             0 sshd
+[136227.475981] [  13287]  1000 13287     3632      211    53248        0             0 systemd
+[136227.475989] [  13288]  1000 13288     9078      411    77824       87             0 (sd-pam)
+[136227.475997] [  13301]  1000 13301     3041      203    45056        0             0 sshd
+[136227.476005] [  13302]  1000 13302      514       36    28672        0             0 sftp-server
+[136227.476014] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/,task=python,pid=7387,uid=0
+[136227.476117] Out of memory: Killed process 7387 (python) total-vm:2375084kB, anon-rss:1724656kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:4196kB oom_score_adj:0
+[136227.726568] oom_reaper: reaped process 7387 (python), now anon-rss:16kB, file-rss:0kB, shmem-rss:0kB
+[139658.924904] usb 1-1.4: new high-speed USB device number 10 using xhci_hcd
+[139659.685131] usb 1-1.4: device descriptor read/64, error -71
+[139659.976005] usb 1-1.4: New USB device found, idVendor=1058, idProduct=2626, bcdDevice=10.34
+[139659.976024] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[139659.976040] usb 1-1.4: Product: My Passport 2626
+[139659.976055] usb 1-1.4: Manufacturer: Western Digital
+[139659.976070] usb 1-1.4: SerialNumber: 575832324136315252385952
+[139659.978295] usb-storage 1-1.4:1.0: USB Mass Storage device detected
+[139659.980370] scsi host0: usb-storage 1-1.4:1.0
+[139661.055628] scsi 0:0:0:0: Direct-Access     WD       My Passport 2626 1034 PQ: 0 ANSI: 6
+[139661.056290] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[139661.058761] sd 0:0:0:0: [sda] Spinning up disk...
+[139661.059119] scsi 0:0:0:1: Enclosure         WD       SES Device       1034 PQ: 0 ANSI: 6
+[139661.063261] scsi 0:0:0:1: Attached scsi generic sg1 type 13
+[139662.094910] .
+[139662.219610] usb 1-1.4: USB disconnect, device number 10
+[139663.134915] .ready
+[139663.135043] sd 0:0:0:0: [sda] Read Capacity(10) failed: Result: hostbyte=0x07 driverbyte=0x00
+[139663.135061] sd 0:0:0:0: [sda] Sense not available.
+[139663.135084] sd 0:0:0:0: [sda] 0 512-byte logical blocks: (0 B/0 B)
+[139663.135100] sd 0:0:0:0: [sda] 0-byte physical blocks
+[139663.135137] sd 0:0:0:0: [sda] Write Protect is off
+[139663.135168] sd 0:0:0:0: [sda] Mode Sense: 00 00 00 00
+[139663.135204] sd 0:0:0:0: [sda] Asking for cache data failed
+[139663.135220] sd 0:0:0:0: [sda] Assuming drive cache: write through
+[139663.186988] sd 0:0:0:0: [sda] Read Capacity(10) failed: Result: hostbyte=0x07 driverbyte=0x00
+[139663.187007] sd 0:0:0:0: [sda] Sense not available.
+[139663.187071] sd 0:0:0:0: [sda] Attached SCSI disk
+[139663.674890] usb 1-1.4: new high-speed USB device number 11 using xhci_hcd
+[139663.885755] usb 1-1.4: New USB device found, idVendor=1058, idProduct=2626, bcdDevice=10.34
+[139663.885765] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[139663.885773] usb 1-1.4: Product: My Passport 2626
+[139663.885780] usb 1-1.4: Manufacturer: Western Digital
+[139663.885787] usb 1-1.4: SerialNumber: 575832324136315252385952
+[139663.887169] usb-storage 1-1.4:1.0: USB Mass Storage device detected
+[139663.887486] scsi host0: usb-storage 1-1.4:1.0
+[139664.895331] scsi 0:0:0:0: Direct-Access     WD       My Passport 2626 1034 PQ: 0 ANSI: 6
+[139664.895768] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[139664.897332] scsi 0:0:0:1: Enclosure         WD       SES Device       1034 PQ: 0 ANSI: 6
+[139664.897504] sd 0:0:0:0: [sda] 1953458176 512-byte logical blocks: (1.00 TB/931 GiB)
+[139664.898073] sd 0:0:0:0: [sda] Write Protect is off
+[139664.898082] sd 0:0:0:0: [sda] Mode Sense: 47 00 10 08
+[139664.898699] sd 0:0:0:0: [sda] No Caching mode page found
+[139664.898707] sd 0:0:0:0: [sda] Assuming drive cache: write through
+[139664.903505] scsi 0:0:0:1: Attached scsi generic sg1 type 13
+[139665.039574] sd 0:0:0:0: [sda] Attached SCSI disk
+[143051.477228] EXT4-fs (sda): warning: mounting unchecked fs, running e2fsck is recommended
+[143051.549661] EXT4-fs (sda): recovery complete
+[143051.574595] EXT4-fs (sda): mounted filesystem with ordered data mode. Opts: (null)
+[143055.352386] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 1, inode_bitmap = 1159
+[143055.409414] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 2, inode_bitmap = 1160
+[143055.464993] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 3, inode_bitmap = 1161
+[143055.520593] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 4, inode_bitmap = 1162
+[143055.565054] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 5, inode_bitmap = 1163
+[143055.598441] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 6, inode_bitmap = 1164
+[143055.654057] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 7, inode_bitmap = 1165
+[143055.709682] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 8, inode_bitmap = 1166
+[143055.765198] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 9, inode_bitmap = 1167
+[143055.801126] EXT4-fs error (device sda): ext4_validate_inode_bitmap:106: comm python: Corrupt inode bitmap - block_group = 10, inode_bitmap = 1168

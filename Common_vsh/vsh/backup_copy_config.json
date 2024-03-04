@@ -1,0 +1,9 @@
+{
+      "WITHOUT_HDD_Limit": "5",
+      "WITHOUT_HDD_Cameras": ["0701","0703","0704"],
+      "storage_limit_Pendrive": "75%",
+      "storage_limit_Hardisk": "90%",
+      "Upload_minio_file": ["0702"],
+      "Upload_minio": true,
+      "Mqtt_API": "http://localhost:3333/api/v1/hardware"
+}
